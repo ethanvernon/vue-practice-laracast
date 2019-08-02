@@ -19,6 +19,10 @@
 		<ul>
 			<li v-for="name in names">{{ name }}</li>
 		</ul>
+		
+		<ul>
+			<li v-for="name in names" v-text="name"></li>
+		</ul>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
