@@ -19,10 +19,13 @@
 		<ul>
 			<li v-for="name in names">{{ name }}</li>
 		</ul>
-		
+
 		<ul>
 			<li v-for="name in names" v-text="name"></li>
 		</ul>
+
+		<input type='text'>
+		<button id='name-button'>add name</button>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -31,11 +34,14 @@
 		Vue.config.devtools = true;
 		Vue.config.debug = true;
 
-		new Vue({
+		var app = new Vue({
 			el: '#root',
 			data: {
 				message: 'Hello World',
 				names: ['Joe', 'Ethan', 'Jim']
+			},
+			mounted() {
+				alert('ready')
 			}
 		})
 
