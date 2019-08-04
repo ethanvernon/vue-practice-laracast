@@ -25,7 +25,7 @@
 		</ul>
 
 		<input @keyup.enter='addName' type='text' v-model='newName'>
-		<button v-bind:title="buttonTitle" @click='addName' id='name-button'>add name</button>
+		<button :title="buttonTitle" @click='addName' id='name-button'>add name</button>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
