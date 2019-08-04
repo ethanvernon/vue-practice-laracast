@@ -22,16 +22,18 @@
 
 		<p>The value is : {{ message }}</p>
 
+		<h3>Using mustache syntax</h3>
 		<ul>
 			<li v-for="name in names">{{ name }}</li>
 		</ul>
 
+		<h3>Using v-text</h3>
 		<ul>
 			<li v-for="name in names" v-text="name"></li>
 		</ul>
 
 
-
+		<h3>My name only:</h3>
 		<ul>
 			<li v-for="name in myNameOnly" v-text="name"></li>
 		</ul>
@@ -57,7 +59,7 @@
 				buttonUsed: false
 			},
 			mounted() {
-				alert('ready')
+				alert('Mounted function call')
 			},
 			methods: {
 				addName() {
@@ -69,14 +71,16 @@
 					this.buttonUsed = true;
 				},				
 				reverseNames() {
-					this.names.forEach((item, index) => {
-						item.split("").reverse().join("")
+					this.names = this.names.map((item) => {
+						return item.split("").reverse().join("")
 					})
 				}
 			},
 			computed: {
 				myNameOnly() {
-					return this.names.filter(name => name == 'Ethan')
+					if(this.names) {
+						return this.names.filter(name => name == 'Ethan')
+					}
 				}
 			}
 		})
