@@ -1,6 +1,6 @@
 Vue.component('practice-component', {
 
-	template: '<li>Foo Bar</li>'
+	template: '<li><slot></slot></li>'
 
 });
 
