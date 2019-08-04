@@ -6,6 +6,12 @@
 	
 <title></title>
 
+<style>
+	.button-used-class {
+		color: blue;
+	}
+</style>
+
 </head>
 
 <body>
@@ -25,7 +31,7 @@
 		</ul>
 
 		<input @keyup.enter='addName' type='text' v-model='newName'>
-		<button :title="buttonTitle" @click='addName' id='name-button'>add name</button>
+		<button :class="{ 'button-used-class': buttonUsed }" :title="buttonTitle" @click='addName' id='name-button'>add name</button>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -40,7 +46,8 @@
 				message: 'Hello World',
 				names: ['Joe', 'Ethan', 'Jim'],
 				newName: '',
-				buttonTitle: "I am button"
+				buttonTitle: "I am button",
+				buttonUsed: false
 			},
 			mounted() {
 				alert('ready')
@@ -49,6 +56,10 @@
 				addName() {
 					this.names.push(this.newName)
 					this.newName=''
+					this.toggleClass();
+				},
+				toggleClass() {
+					this.buttonUsed = true;
 				}
 
 			}
