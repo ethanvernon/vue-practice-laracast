@@ -30,8 +30,15 @@
 			<li v-for="name in names" v-text="name"></li>
 		</ul>
 
+
+
+		<ul>
+			<li v-for="name in myNameOnly" v-text="name"></li>
+		</ul>
+
 		<input @keyup.enter='addName' type='text' v-model='newName'>
 		<button :class="{ 'button-used-class': buttonUsed }" :title="buttonTitle" @click='addName' id='name-button'>add name</button>
+		<button @click='reverseNames'>Reverse names</button>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -60,8 +67,17 @@
 				},
 				toggleClass() {
 					this.buttonUsed = true;
+				},				
+				reverseNames() {
+					this.names.forEach((item, index) => {
+						item.split("").reverse().join("")
+					})
 				}
-
+			},
+			computed: {
+				myNameOnly() {
+					return this.names.filter(name => name == 'Ethan')
+				}
 			}
 		})
 
