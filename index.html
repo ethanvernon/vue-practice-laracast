@@ -41,9 +41,16 @@
 		<input @keyup.enter='addName' type='text' v-model='newName'>
 		<button :class="{ 'button-used-class': buttonUsed }" :title="buttonTitle" @click='addName' id='name-button'>add name</button>
 		<button @click='reverseNames'>Reverse names</button>
+
+		<h3>Vue component</h3>
+		<div id='component'>
+			<practice-component></practice-component>
+		</div>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+	<script src="main.js"></script>
 
 	<script>
 		Vue.config.devtools = true;
