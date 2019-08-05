@@ -3,11 +3,11 @@
 <html>
 
 <head>
-	
+
 	<title></title>
 
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
 
 	<style>
 		.button-used-class {
@@ -16,7 +16,12 @@
 
 		.message {
 			margin: 20px;
-			max-width:50%;
+			max-width: 50%;
+		}
+
+		h3 {
+			font-size: 24px;
+			font-weight: 600;
 		}
 	</style>
 
@@ -47,16 +52,23 @@
 		</ul>
 
 		<input @keyup.enter='addName' type='text' v-model='newName'>
-		<button :class="{ 'button-used-class': buttonUsed }" :title="buttonTitle" @click='addName' id='name-button'>add name</button>
+		<button :class="{ 'button-used-class': buttonUsed }" :title="buttonTitle" @click='addName' id='name-button'>add
+			name</button>
 		<button @click='reverseNames'>Reverse names</button>
+	</div>
 
-		<h3>Vue component</h3>
-		<div id='component'>
-			<practice-wrapper></practice-wrapper>
-		</div>
+	<div id='component'>
+		<h3>Vue component (nested)</h3>
+		<practice-wrapper></practice-wrapper>
 
 		<h3>Making Bulma component in Vue</h3>
 		<message title='component title' body='Lorem ipsum stuff'></message>
+
+		<h3>Bulma modals in Vue (component)</h3>
+
+		<custom-modal v-if="showModal" @close="showModal = false"></custom-modal>
+
+		<button @click="showModal = true">show modal</button>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -82,12 +94,12 @@
 			methods: {
 				addName() {
 					this.names.push(this.newName)
-					this.newName=''
+					this.newName = ''
 					this.toggleClass();
 				},
 				toggleClass() {
 					this.buttonUsed = true;
-				},				
+				},
 				reverseNames() {
 					this.names = this.names.map((item) => {
 						return item.split("").reverse().join("")
@@ -96,7 +108,7 @@
 			},
 			computed: {
 				myNameOnly() {
-					if(this.names) {
+					if (this.names) {
 						return this.names.filter(name => name == 'Ethan')
 					}
 				}

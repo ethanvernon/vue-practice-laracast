@@ -1,3 +1,18 @@
+Vue.component('custom-modal', {
+	template: `
+		<div class="modal is-active">
+			<div class="modal-background"></div>
+				<div class="modal-content">
+					<div class='box'>
+						<p>Lorem ipsum</p>
+					</div>
+				</div>
+			<button @click="$emit('close')" class="modal-close"></button>
+		</div>
+	`
+});
+
+
 Vue.component('practice-component', {
 
 	template: '<li><slot></slot></li>',
@@ -7,7 +22,6 @@ Vue.component('practice-component', {
 			message: 'in a component data has to be function that returns an object'
 		}
 	}
-
 });
 
 Vue.component('practice-wrapper', {
@@ -20,15 +34,15 @@ Vue.component('practice-wrapper', {
 	data() {
 		return {
 			tasks: [
-				{description: 'get air mattress', completed: 'yes'},
-				{description: 'get food', completed: 'yes'},
-				{description: 'clean apartment', completed: 'no'},
-				{description: 'get furniture', completed: 'no'},				
+				{ description: 'get air mattress', completed: 'yes' },
+				{ description: 'get food', completed: 'yes' },
+				{ description: 'clean apartment', completed: 'no' },
+				{ description: 'get furniture', completed: 'no' },
 			]
 		}
 	}
 
-})
+});
 
 Vue.component('message', {
 
@@ -61,9 +75,13 @@ Vue.component('message', {
 		}
 	}
 
-})
+});
 
 
 new Vue({
-	el: '#component'
-})
+	el: '#component',
+
+	data: {
+		showModal: true
+	}
+});
