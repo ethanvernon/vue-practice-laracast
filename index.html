@@ -4,13 +4,21 @@
 
 <head>
 	
-<title></title>
+	<title></title>
 
-<style>
-	.button-used-class {
-		color: blue;
-	}
-</style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+
+	<style>
+		.button-used-class {
+			color: blue;
+		}
+
+		.message {
+			margin: 20px;
+			max-width:50%;
+		}
+	</style>
 
 </head>
 
@@ -46,6 +54,9 @@
 		<div id='component'>
 			<practice-wrapper></practice-wrapper>
 		</div>
+
+		<h3>Making Bulma component in Vue</h3>
+		<message title='component title' body='Lorem ipsum stuff'></message>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
