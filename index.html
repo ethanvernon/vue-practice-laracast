@@ -23,6 +23,10 @@
 			font-size: 24px;
 			font-weight: 600;
 		}
+
+		body {
+			margin-bottom:100px;
+		}
 	</style>
 
 </head>
@@ -66,14 +70,33 @@
 
 		<h3>Bulma modals in Vue (component)</h3>
 
-		<custom-modal v-if="showModal" @close="showModal = false"></custom-modal>
+		<custom-modal v-if="showModal" @close="showModal = false">
+			<p>I am the modal's text inside a slot tag</p>
+		</custom-modal>
 
 		<button @click="showModal = true">show modal</button>
+	</div>
+
+	<div id='tabs'>
+		<h3>Tabs</h3>
+
+		<tabs>
+			<tab name="About us test" :selected="true">
+				<p>I am the about us content</p>
+			</tab>
+			<tab name="About them">
+				<p>I am the about them content</p>
+			</tab>
+			<tab name="About you">
+				<p>I am the about you content</p>
+			</tab>
+		</tabs>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 	<script src="main.js"></script>
+	<script src='tabs.js'></script>
 
 	<script>
 		Vue.config.devtools = true;

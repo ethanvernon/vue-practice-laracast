@@ -4,7 +4,7 @@ Vue.component('custom-modal', {
 			<div class="modal-background"></div>
 				<div class="modal-content">
 					<div class='box'>
-						<p>Lorem ipsum</p>
+						<slot></slot>
 					</div>
 				</div>
 			<button @click="$emit('close')" class="modal-close"></button>
