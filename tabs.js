@@ -1,3 +1,5 @@
+//gethub auth test
+
 Vue.component('tabs', {
     template: `
 		<div>
