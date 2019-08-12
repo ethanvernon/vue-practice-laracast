@@ -93,10 +93,16 @@
 		</tabs>
 	</div>
 
+	<div id='communication'>
+		<coupon @applied="onCouponApplied"></coupon>
+		<h1 v-if="couponApplied">Coupon received</h1>
+	</div>
+
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 	<script src="main.js"></script>
 	<script src='tabs.js'></script>
+	<script src='communication.js'></script>
 
 	<script>
 		Vue.config.devtools = true;
